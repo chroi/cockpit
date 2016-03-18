@@ -68,6 +68,10 @@ if (Meteor.isClient) {
                   //reduce
                   return amount + sum;
                 });
+        },
+
+        currentMonth: function() {
+            return "Mars";
         }
     });
 

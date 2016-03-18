@@ -63,13 +63,11 @@
                         <p>Bienvenue Stefan !</p>
 
                         <p>Votre solde <span style="font-size: 2em; color: green">{{amount}} h</span></p>
-                        
-                        <p>Acheter des heures supplémentaires</p>
                     </div>
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">Résumé du travail effecté ce mois-ci</div>
+                    <div class="panel-heading">Résumé du travail effecté durant le mois de {{currentMonth}}</div>
 
                     <div class="panel-body">
                     {{#if 1}}
@@ -89,7 +87,7 @@
                                 {{> item}}
                             {{/each}}   
                                 <tr style="border-top: solid 2px #ddd;">
-                                    <td colspan="2">TOTAL</td>
+                                    <td colspan="4">TOTAL</td>
                                     <td>{{sum}} h</td>
                                 </tr>
                         </tbody>
