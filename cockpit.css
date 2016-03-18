@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+.exponent {
+    color: aquamarine;
+    font-size:small;
+    vertical-align: super;
+}

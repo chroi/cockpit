@@ -2,7 +2,7 @@ Items = new Mongo.Collection("items");
 Subscriptions = new Mongo.Collection("subscriptions");
 
 client = "AMON CONSULTING MANAGMENT";
-
+//client = "HARMONIOUS BREATHING";
 
 Subscription = Astro.Class({
   name: 'Subscription',
@@ -26,7 +26,7 @@ Item = Astro.Class({
   },
   methods: {
       duration: function() {
-          return "13";
+          return moment().format((this.started_at - this.ended_at));
       }
   }
 });
@@ -49,7 +49,7 @@ if (Meteor.isClient) {
                   return amount + sum;
                 });
         },
-        
+
         sum: function() {
             return _.reduce(_.map(Items.find({client: client}).fetch(), 
                 function(item) {
