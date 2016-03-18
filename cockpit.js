@@ -1,4 +1,16 @@
+Items = new Mongo.Collection("items");
+
 if (Meteor.isClient) {
+    
+    Template.body.helpers({
+        items: function () {
+        return Items.find({});
+        }
+    });
+    
+    
+/* old stuff that has to do with the example app */
+    
   // counter starts at 0
   Session.setDefault('counter', 0);
 
