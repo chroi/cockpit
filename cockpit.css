@@ -4,3 +4,7 @@
     font-size:small;
     vertical-align: super;
 }
+
+#navbar ul.navbar-nav {
+    display: none;
+}
