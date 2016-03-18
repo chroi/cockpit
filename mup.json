@@ -30,7 +30,7 @@
   "appName": "cockpit",
 
   // Location of app (local directory)
-  "app": "/home/ubuntu/cockpit",
+  "app": "/vagrant/cockpit",
 
   // Configure environment
   "env": {
