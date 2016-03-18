@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "ec2-52-34-64-242.us-west-2.compute.amazonaws.com",
+      "host": "cockpit.digitalguru.ch",
       "username": "ubuntu",
       //"password": "password"
       // or pem file (ssh based authentication)
@@ -34,7 +34,7 @@
 
   // Configure environment
   "env": {
-    "ROOT_URL": "http://http://52.34.64.242:80",
+    "ROOT_URL": "http://cockpit.digitalguru.ch:80",
     "MONGO_URL": "mongodb://127.0.0.1:27017/cockpit"
   },
 
