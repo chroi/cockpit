@@ -3,6 +3,17 @@ Subscriptions = new Mongo.Collection("subscriptions");
 
 client = "AMON CONSULTING MANAGMENT";
 
+
+Subscription = Astro.Class({
+  name: 'Subscription',
+  collection: Subscriptions,
+  fields: {
+    client: 'string',
+    started_at: 'date',
+    amount: 'number'
+  }
+});
+
 Item = Astro.Class({
   name: 'Item',
   collection: Items,
