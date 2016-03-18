@@ -34,7 +34,7 @@
 
   // Configure environment
   "env": {
-    "ROOT_URL": "http://cockpit.digitalguru.ch",
+    "ROOT_URL": "http://http://52.34.64.242:80",
     "MONGO_URL": "mongodb://127.0.0.1:27017/cockpit"
   },
 
