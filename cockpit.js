@@ -27,17 +27,6 @@ Item = Astro.Class({
   methods: {
       duration: function() {
           return moment.duration(this.ended_at - this.started_at).asHours();
-      },
-      sumForMonth: function(month) {
-          return _.reduce(_.map(Items.find({client: client}).fetch(), 
-                function(item) {
-                  //map
-                  return item.duration();
-                }), 
-                function(amount, sum){ 
-                  //reduce
-                  return amount + sum;
-                });
       }
   }
 });
@@ -46,7 +35,7 @@ if (Meteor.isClient) {
 
     Template.body.helpers({
         items: function() {
-        return Items.find({client: client, started_at: {$gte: new Date('2016-02-01'), $lte: new Date('2016-02-29')}});
+        return Items.find({client: client, started_at: {$gte: new Date('2016-03-01'), $lte: new Date('2016-03-29')}});
         },
         
         formatDate: function(date) {
@@ -73,8 +62,16 @@ if (Meteor.isClient) {
                 });
         },
 
-        sum: function() {
-            return Item.sumForMonth(3);
+        sumForMonth: function() {
+            return _.reduce(_.map(Items.find({client: client, started_at: {$gte: new Date('2016-03-01'), $lte: new Date('2016-03-29')}}).fetch(), 
+                function(item) {
+                  //map
+                  return item.duration();
+                }), 
+                function(amount, sum){ 
+                  //reduce
+                  return amount + sum;
+                });
         },
 
         currentMonth: function() {
