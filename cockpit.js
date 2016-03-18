@@ -1,13 +1,15 @@
 Items = new Mongo.Collection("items");
 
+client = "AMON CONSULTING MANAGMENT";
+
 if (Meteor.isClient) {
     
     Template.body.helpers({
         items: function () {
-        return Items.find({});
+        return Items.find({client: client});
         }
     });
-    
+
     
 /* old stuff that has to do with the example app */
     

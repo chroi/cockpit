@@ -88,7 +88,7 @@
                     <div class="panel-heading">Résumé du travail effecté ce mois-ci</div>
 
                     <div class="panel-body">
-
+                    {{#if 1}}
                     <table class="table table-condensed table-striped">
                         <thead>
                             <tr>
@@ -111,8 +111,9 @@
                         </tbody>
                     </table>
 
-
-                        <h3 class="text-center alert alert-info">Empty!</h3>
+                    {{else}}
+                        <h3 class="text-center alert alert-info">Aucune donnée pour l'instant!</h3>
+                    {{/if}}
                     </div>
                 </div>
 
@@ -127,7 +128,7 @@
     <tr>
         <td>{{client}}</td>
         <td>{{project}}</td>
-        <td>{{started_at}}</td>
+        <td>{{date}}</td>
         <td>{{description}}</td>
         <td>XX h</td>
     </tr>
