@@ -15,7 +15,7 @@ Item = Astro.Class({
   },
   methods: {
       duration: function() {
-          return (this.started_at - this.ended_at);
+          return "13";
       }
   }
 });
@@ -32,6 +32,18 @@ if (Meteor.isClient) {
                 function(sub) {
                   //map
                   return sub.amount;
+                }), 
+                function(amount, sum){ 
+                  //reduce
+                  return amount + sum;
+                });
+        },
+        
+        sum: function() {
+            return _.reduce(_.map(Items.find({client: client}).fetch(), 
+                function(item) {
+                  //map
+                  return item.duration();
                 }), 
                 function(amount, sum){ 
                   //reduce
