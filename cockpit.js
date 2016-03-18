@@ -1,12 +1,17 @@
 Items = new Mongo.Collection("items");
+Subscriptions = new Mongo.Collection("subscriptions");
 
 client = "AMON CONSULTING MANAGMENT";
 
 if (Meteor.isClient) {
-    
+
     Template.body.helpers({
         items: function () {
         return Items.find({client: client});
+        },
+
+        amount: function() {
+            return Subscriptions.find({client: client});
         }
     });
 
