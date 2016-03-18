@@ -3,6 +3,23 @@ Subscriptions = new Mongo.Collection("subscriptions");
 
 client = "AMON CONSULTING MANAGMENT";
 
+Item = Astro.Class({
+  name: 'Item',
+  collection: Items,
+  fields: {
+    client: 'string',
+    project: 'string',
+    started_at: 'date',
+    ended_at: 'date',
+    description: 'string'
+  },
+  methods: {
+      duration: function() {
+          return (this.started_at - this.ended_at);
+      }
+  }
+});
+
 if (Meteor.isClient) {
 
     Template.body.helpers({
@@ -11,7 +28,15 @@ if (Meteor.isClient) {
         },
 
         amount: function() {
-            return Subscriptions.find({client: client});
+            return _.reduce(_.map(Subscriptions.find({client: client}).fetch(), 
+                function(sub) {
+                  //map
+                  return sub.amount;
+                }), 
+                function(amount, sum){ 
+                  //reduce
+                  return amount + sum;
+                });
         }
     });
 
