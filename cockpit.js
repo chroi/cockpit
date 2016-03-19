@@ -4,6 +4,12 @@ Subscriptions = new Mongo.Collection("subscriptions");
 client = "AMON CONSULTING MANAGMENT";
 //client = "HARMONIOUS BREATHING";
 
+AccountsTemplates.configure({
+    forbidClientAccountCreation: true,
+});
+
+T9n.setLanguage('fr');
+
 Subscription = Astro.Class({
   name: 'Subscription',
   collection: Subscriptions,
