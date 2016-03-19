@@ -8,40 +8,56 @@
     <link rel="icon" href="favicon.ico">
 
     <title>cockpit.digitalguru.ch</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+  <div class="navbar-fixed">
+       <nav role="navigation">
+            <div class="nav-wrapper container">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Cockpit<span class="exponent">beta</span></a>
+             <a id="logo-container" class="brand-logo" href="/">Cockpit<span class="exponent">beta</span></a>
+
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Navbar Link</a></li>
+              </ul>
+
+              <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+              </ul>
+
+              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <div class="container">
     {{#if currentUser}}
+           
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">Bonjour Stefan !</span>
+              <p>Votre solde actuel : <span style="font-size: 2em; color: green">{{amount}} h</span></p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="waves-effect waves-light btn">Créditer mon compte</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
             <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Mon compte</div>
+            <div class="col s12 m12">
 
-                    <div class="panel-body">
-                        <p>Bienvenue Stefan !</p>
-
-                        <p>Votre solde <span style="font-size: 2em; color: green">{{amount}} h</span></p>
-                        
-                        <p><a href="#">Créditer mon compte</a></p>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">Résumé du travail effecté durant le mois de {{currentMonth}}</div>
-
-                    <div class="panel-body">
+                <div class="divider"></div>
+                <div class="section">
+                    <h5>Résumé du mois de {{currentMonth}}</h5>
+                    
                     {{#if 1}}
-                    <table class="table table-condensed table-striped">
+                    <table class="striped responsive-table">
                         <thead>
                             <tr>
                                 <th>CLIENT</th>
@@ -66,16 +82,41 @@
                     {{else}}
                         <h3 class="text-center alert alert-info">Aucune donnée pour l'instant!</h3>
                     {{/if}}
-                    </div>
                 </div>
-
             </div>
         </div>
+
     {{else}}
         {{> atForm}}
     {{/if}}
     </div>
 
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 Gilles Cherix
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+            
 </body>
 
 
